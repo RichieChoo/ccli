@@ -1,5 +1,7 @@
 # ccli
 
+[![npm version](https://badge.fury.io/js/ccli.svg)](http://badge.fury.io/js/ccli)
+
 return cli common varibles 
 
 - file_path(fp)		: get current path
