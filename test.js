@@ -6,3 +6,7 @@ var ccli = require('.')(__dirname)
 console.log(ccli.fp);
 console.log(ccli.cp);
 console.log(ccli.argv);
+
+console.log('(%d,%d)', ccli.argv.z, ccli.argv.y);
+
+console.log(ccli.argv._);

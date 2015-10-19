@@ -1,12 +1,11 @@
 module.exports = function (dir) {
-	var argv = process.argv;
-	argv.shift();
+	var args = process.argv;
 	
 	return {
 		file_path:dir,
 		current_path : process.cwd(),
-		argv:argv,
-		
+		args:args,
+		argv: require('yargs').argv,
 		// alias
 		fp:dir,
 		cp : process.cwd()
