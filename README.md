@@ -28,3 +28,14 @@ console.log(ccli.argv);
 console.log('(%d,%d)', ccli.argv.x, ccli.argv.y);
 ```
 
+### 获取用户主目录
+
+```
+ccli.home
+```
+
+### 创建软连接
+
+```
+ccli.link('node_modules','aaa')
+```
