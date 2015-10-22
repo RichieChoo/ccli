@@ -19,6 +19,8 @@
   "homepage": "https://github.com/i5ting/ccli#readme",
   "dependencies": {
     "fs-symlink": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.4.3",
     "yargs": "^3.27.0"
   },
   "devDependencies": {

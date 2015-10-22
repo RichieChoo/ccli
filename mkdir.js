@@ -15,9 +15,8 @@ var ccli = require('.')(__dirname)
 console.log(ccli);
 
 
-// ccli.link('node_modules','aaa')
-
-
-ccli.link('node_modules','aaa', function(){
-  console.log('------------------------')
+ccli.mkdir('node_modules/aaa/ddd',function(){
+  
 })
+
+ 
