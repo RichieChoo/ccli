@@ -9,9 +9,10 @@ var rm = require('rimraf');
 var C =  function (dir) {
 	var args = process.argv;
   // lib
-  this.symlink = symlink;
-  this.mkdirp = mkdirp;
-  this.rm = rm;
+  this.symlink      = symlink;
+  this.mkdirp       = mkdirp;
+  this.rm           = rm;
+  this.yargs        = require('yargs');
   
   // attrs
   this.file_path    = dir;
