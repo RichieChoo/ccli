@@ -37,11 +37,11 @@ var C =  function (dir) {
 	return this;
 }
 
-function home(){
+function home (){
   return process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
 }
 
-function symlink(dir, dir_name) {
+function symlink (dir, dir_name) {
   console.log(arguments);
   var cb = function () {
     console.log('copy modudle ' + dir_name + ' finished');
@@ -54,18 +54,18 @@ function symlink(dir, dir_name) {
   symlink(dir, dir_name,  'junction').then(cb)
 };
 
-function mkdirp(path, cb){
+function mkdirp (path, cb) {
   mkdirp(path, cb);
 }
 
-function rmdir(path, cb){
+function rmdir (path, cb){
   rm(path, cb);
 }
 
-function mkdirpSync(path, cb){
+function mkdirpSync (path, cb) {
   mkdirp.sync(path);
 }
 
-function rmdirSync(path, cb){
+function rmdirSync (path, cb) {
   rm.sync(path);
 }
