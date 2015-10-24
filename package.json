@@ -1,11 +1,12 @@
 {
   "name": "ccli",
-  "version": "1.0.5",
-  "description": "",
+  "version": "1.0.6",
+  "description": "a cli tools",
   "main": "index.js",
   "scripts": {
     "start": "npm publish .",
-    "test": "cd .. && node ccli/test.js -x 1 -y 2"
+    "test": "cd .. && node ccli/test.js -x 1 -y 2",
+    "b":"git commit -am 'bump version' && gp && npm start"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
     "fs-symlink": "^1.2.0",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.4.3",
+    "tpl_apply": "^1.0.3",
     "yargs": "^3.27.0"
   },
   "devDependencies": {

@@ -5,6 +5,7 @@ var fs = require('fs');
 var symlink = require('fs-symlink');
 var mkdirp = require('mkdirp');
 var rm = require('rimraf');
+var tpl_appy = require('tpl_appy');
 
 var C =  function (dir) {
 	var args = process.argv;
@@ -13,6 +14,7 @@ var C =  function (dir) {
   this.mkdirp       = mkdirp;
   this.rm           = rm;
   this.yargs        = require('yargs');
+  this.tpl_appy     = tpl_appy;
   
   // attrs
   this.file_path    = dir;
@@ -27,6 +29,7 @@ var C =  function (dir) {
   this.rmdir        = rmdir;
   this.copy         = copy;
   this.copy_to      = copy_to;
+  this.tpl          = tpl;
   
   // sync methods
   this.mkdir_sync   = mkdirpSync;
@@ -80,4 +83,8 @@ function copy_to(source_arr, dest_path){
   source_arr.forEach(function (item) {
     copy(item, dest_path + item)
   })
+}
+
+function tpl(source, data, dest){
+  tpl_appy.tpl_apply(source, data, dest);
 }
