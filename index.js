@@ -32,8 +32,8 @@ var C =  function (dir) {
   this.copy         = copy;
   this.copy_to      = copy_to;
   this.tpl          = tpl;
+  this.walkdir      = walkdir;
   this.linkfolder2   = linkfolder;
-  
   this.linkfolder = function(path, dest){
     this.linkfolder2(this.fp + '/' + path, this.cp + '/' + dest)
   }
@@ -96,12 +96,12 @@ function tpl (source, data, dest) {
   tpl_appy.tpl_apply(source, data, dest);
 }
 
-function dirw (path, cb) {
+function walkdir (path, cb) {
   dirw.dir(path, cb); 
 }
 
 function linkfolder (path, dest) {
-  dirw.dir(path,  function(dir_path, dir_name){
+  walkdir(path,  function(dir_path, dir_name){
     console.log(dir_path);
     console.log(dir_name);
     symlink (dir_path, dest + '/' + dir_name)
