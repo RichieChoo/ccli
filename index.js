@@ -1,7 +1,7 @@
 module.exports = function (dir) {
   return new C(dir);
 }
-
+var fs = require('fs');
 var symlink = require('fs-symlink');
 var mkdirp = require('mkdirp');
 var rm = require('rimraf');
@@ -25,6 +25,7 @@ var C =  function (dir) {
   this.link         = symlink;
   this.mkdir        = mkdirp;
   this.rmdir        = rmdir;
+  this.copy         = copy;
   
   // sync methods
   this.mkdir_sync   = mkdirpSync;
@@ -68,4 +69,8 @@ function mkdirpSync (path, cb) {
 
 function rmdirSync (path, cb) {
   rm.sync(path);
+}
+
+function copy(src, dest){
+  fs.createReadStream(src).pipe(fs.createWriteStream(dest));
 }

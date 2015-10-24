@@ -39,3 +39,9 @@ ccli.home
 ```
 ccli.link('node_modules','aaa')
 ```
+
+### copy
+
+```
+ccli.copy('index.js',__dirname + '/aaa.js')
+```
