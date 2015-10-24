@@ -40,8 +40,19 @@ ccli.home
 ccli.link('node_modules','aaa')
 ```
 
+### 创建软连接
+
+```
+ccli.linkfolder('node_modules','aaa')
+```
+
 ### copy
 
 ```
 ccli.copy('index.js',__dirname + '/aaa.js')
 ```
+
+## 实例
+
+https://github.com/i5ting/docto/
+
