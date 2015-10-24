@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm publish .",
     "test": "cd .. && node ccli/test.js -x 1 -y 2",
-    "b":"git commit -am 'bump version' && gp && npm start"
+    "b":"git commit -am 'bump version' && git push && npm start"
   },
   "repository": {
     "type": "git",
