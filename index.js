@@ -26,6 +26,7 @@ var C =  function (dir) {
   this.mkdir        = mkdirp;
   this.rmdir        = rmdir;
   this.copy         = copy;
+  this.copy_to      = copy_to;
   
   // sync methods
   this.mkdir_sync   = mkdirpSync;
@@ -73,4 +74,10 @@ function rmdirSync (path, cb) {
 
 function copy(src, dest){
   fs.createReadStream(src).pipe(fs.createWriteStream(dest));
+}
+
+function copy_to(source_arr, dest_path){
+  source_arr.forEach(function (item) {
+    copy(item, dest_path + item)
+  })
 }
