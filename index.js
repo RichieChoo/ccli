@@ -34,6 +34,10 @@ var C =  function (dir) {
   this.tpl          = tpl;
   this.linkfolder   = linkfolder;
   
+  this.l2 = function(path, dest){
+    this.linkfolder(this.fp + '/' + path, this.cp + '/' + dest)
+  }
+  
   // sync methods
   this.mkdir_sync   = mkdirpSync;
   this.rmdir_sync   = rmdirSync;
