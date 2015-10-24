@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm publish .",
     "test": "cd .. && node ccli/test.js -x 1 -y 2",
-    "b":"git commit -am 'bump version' && git push && npm start"
+    "b": "git commit -am 'bump version' && git push && npm start"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/i5ting/ccli#readme",
   "dependencies": {
     "fs-symlink": "^1.2.0",
+    "handlebars": "^4.0.3",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.4.3",
     "tpl_apply": "^1.0.3",

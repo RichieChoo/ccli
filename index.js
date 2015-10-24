@@ -5,7 +5,7 @@ var fs = require('fs');
 var symlink = require('fs-symlink');
 var mkdirp = require('mkdirp');
 var rm = require('rimraf');
-var tpl_appy = require('tpl_appy');
+var tpl_appy = require('tpl_apply');
 
 var C =  function (dir) {
 	var args = process.argv;
