@@ -6,6 +6,7 @@ var symlink = require('fs-symlink');
 var mkdirp = require('mkdirp');
 var rm = require('rimraf');
 var tpl_appy = require('tpl_apply');
+var dirw = require('dirw');
 
 var C =  function (dir) {
 	var args = process.argv;
@@ -15,6 +16,7 @@ var C =  function (dir) {
   this.rm           = rm;
   this.yargs        = require('yargs');
   this.tpl_appy     = tpl_appy;
+  this.dirw         = dirw;
   
   // attrs
   this.file_path    = dir;
@@ -30,6 +32,7 @@ var C =  function (dir) {
   this.copy         = copy;
   this.copy_to      = copy_to;
   this.tpl          = tpl;
+  this.linkfolder   = linkfolder;
   
   // sync methods
   this.mkdir_sync   = mkdirpSync;
@@ -49,7 +52,7 @@ function home (){
 function symlink (dir, dir_name) {
   console.log(arguments);
   var cb = function () {
-    console.log('copy modudle ' + dir_name + ' finished');
+    console.log('symlink: copy modudle ' + dir_name + ' finished');
   }
   
   if (arguments.length == 3) {
@@ -75,16 +78,28 @@ function rmdirSync (path, cb) {
   rm.sync(path);
 }
 
-function copy(src, dest){
+function copy (src, dest) {
   fs.createReadStream(src).pipe(fs.createWriteStream(dest));
 }
 
-function copy_to(source_arr, dest_path){
+function copy_to (source_arr, dest_path) {
   source_arr.forEach(function (item) {
     copy(item, dest_path + item)
   })
 }
 
-function tpl(source, data, dest){
+function tpl (source, data, dest) {
   tpl_appy.tpl_apply(source, data, dest);
+}
+
+function dirw (path, cb) {
+  dirw.dir(path, cb); 
+}
+
+function linkfolder (path, dest) {
+  dirw.dir(path,  function(dir_path, dir_name){
+    console.log(dir_path);
+    console.log(dir_name);
+    symlink (dir_path, dest + '/' + dir_name)
+  }) 
 }
