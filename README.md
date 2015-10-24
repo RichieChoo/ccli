@@ -43,26 +43,26 @@ ccli.link('node_modules','aaa')
 ### 创建软连接
 
 ```
-ccli.linkfolder('node_modules','aaa')
+ccli.linkfolder2('node_modules','aaa')
 ```
 
 比如
 
 ```
-ccli.linkfolder(ccli.fp + '/' + 'node_modules/', ccli.cp + '/' +'node_modules/')
+ccli.linkfolder2(ccli.fp + '/' + 'node_modules/', ccli.cp + '/' +'node_modules/')
 ```
 
 ### 更简单的用法
 
 ```
-ccli.linkfolder(ccli.fp + '/' + 'node_modules/', ccli.cp + '/' +'node_modules/')
+ccli.linkfolder2(ccli.fp + '/' + 'node_modules/', ccli.cp + '/' +'node_modules/')
 ```
 
 可以简写为
 
 
 ```
-ccli.l2('node_modules/','node_modules/')
+ccli.linkfolder('node_modules/','node_modules/')
 ```
 
 它会自动提供路径，src是模块所在路径，而dest是当前路径

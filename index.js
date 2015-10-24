@@ -32,10 +32,10 @@ var C =  function (dir) {
   this.copy         = copy;
   this.copy_to      = copy_to;
   this.tpl          = tpl;
-  this.linkfolder   = linkfolder;
+  this.linkfolder2   = linkfolder;
   
-  this.l2 = function(path, dest){
-    this.linkfolder(this.fp + '/' + path, this.cp + '/' + dest)
+  this.linkfolder = function(path, dest){
+    this.linkfolder2(this.fp + '/' + path, this.cp + '/' + dest)
   }
   
   // sync methods
