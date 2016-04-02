@@ -1,6 +1,6 @@
 {
   "name": "ccli",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "a cli tools",
   "main": "index.js",
   "scripts": {
