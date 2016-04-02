@@ -73,6 +73,15 @@ ccli.linkfolder('node_modules/','node_modules/')
 ccli.copy('index.js',__dirname + '/aaa.js')
 ```
 
+
+### copy_dir_to
+
+拷贝一个目录到另一个目录
+
+```
+ccli.copy_dir_to("a", "b")
+```
+
 ### walkdir
 
 列出path下面的所有目录
@@ -87,3 +96,8 @@ ccli.walkdir(path,  function(dir_path, dir_name){
 
 https://github.com/i5ting/docto/
 
+
+## TODO
+
+- [ ] 判断文件是否存在
+- [ ] 判断文件夹是否存在

@@ -1,12 +1,15 @@
 module.exports = function (dir) {
   return new C(dir);
 }
+require('shelljs/global');
+
 var fs = require('fs');
 var symlink = require('fs-symlink');
 var mkdirp = require('mkdirp');
 var rm = require('rimraf');
 var tpl_appy = require('tpl_apply');
 var dirw = require('dirw');
+
 
 var C =  function (dir) {
 	var args = process.argv;
@@ -90,6 +93,10 @@ function copy_to (source_arr, dest_path) {
   source_arr.forEach(function (item) {
     copy(item, dest_path + item)
   })
+}
+
+function copy_dir_to (source_path, dest_path) {
+  cp('-R', source_path, dest_path);
 }
 
 function tpl (source, data, dest) {
